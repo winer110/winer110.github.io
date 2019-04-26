@@ -1,0 +1,336 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.section {
+	position: relative;
+	overflow: hidden;
+}
+.first{
+	padding-top: 80px;
+}
+.first .logo {
+	width: 251px;
+	height: 186px;
+	margin: 0 auto;
+	background-image: url(../images/logo.png);
+}
+
+.first .text {
+	text-align: center;
+	line-height: 1;
+	margin: 85px 0 45px;
+}
+.first img {
+	margin: 0 24px;
+	opacity: 0;
+}
+
+.first .info {
+	height: 49px;
+	background: url(../images/info_1.png) center center no-repeat;
+}
+.first.current img{
+	opacity: 1;
+	margin: 0;
+	transition: all 1s ease .3s;
+}
+
+
+
+
+
+
+
+/*.second{*/
+.second>div{         /*第一个问题：插件自己创建的元素*/
+	padding: 0 100px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between; /*两端对齐*/
+}
+
+.second .shield{
+	width: 428px;
+	height: 500px;
+	/*flex: 1;*/
+
+}
+.second .info{
+	width: 635px;
+	height: 309px;
+	/*flex: 1;*/
+	background: url(../images/info_2.png);
+
+}
+.second img{
+	/*border: none 0; */
+	float: left;
+}
+.second img:nth-child(1){
+	transform: translate(700px,00px);
+}
+.second img:nth-child(2){
+	transform: translate(100px,20px);
+}
+.second img:nth-child(3){
+	transform: translate(300px,600px) rotate(45deg);
+}
+.second img:nth-child(4){
+	transform: translate(400px,60px);
+}
+.second img:nth-child(5){
+	transform: translate(500px,600px);
+}
+.second img:nth-child(6){
+	transform: translate(600px,60px) rotate(45deg);
+}
+.second img:nth-child(7){
+	transform: translate(700px,600px);
+}
+.second img:nth-child(8){
+	transform: translate(800px,630px);
+}
+.second img:nth-child(9){
+	transform: translate(900px,400px) rotate(45deg);
+}
+/*动画*/
+.second.current img{
+	transform: translate(0,0);
+	transition: all 1.5s ease-in-out;
+}
+
+.third{
+	position: relative;
+	padding: 0 80px;
+
+}
+.third>div{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.third .info{
+	width: 630px;
+	height: 278px;
+	background: url(../images/info_3.png);
+}
+.third .circle{
+	width: 453px;
+	height: 449px;
+	background: url(../images/circle.png);
+}
+.third .rocket{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 204px;
+	height: 204px;
+	transform: rotate(0deg) translate(0,204px);
+	background: url(../images/rocket.png);
+}
+.third.current .rocket{
+	transform: rotate(20deg) translate(830px,-500px);
+	transition: all 1.5s ease-in-out .2s;
+}
+
+
+.forth{
+	/*position: relative;*/
+	padding: 0 80px;
+
+}
+.forth>div{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	overflow: hidden;
+}
+
+.forth .search{
+	width: 530px;
+	height: 299px; /*登高实现顶对齐*/
+	position: relative;
+	transform: translateX(-120%);
+	
+}
+.forth .search .input{
+	width: 530px;
+	height: 66px;
+	background: url(../images/search.png);
+}
+.search /*.input */.keyward{
+	position: absolute;
+	top: 24px;
+	left: 20px;
+
+	width: 99px;
+	height: 22px;
+	width: 0;
+	background: url(../images/key.png);
+}
+.forth .search .wrap{
+	width: 529px;
+	height: 372px;
+	overflow: hidden;
+	position: absolute;
+	top:53px;
+	left: 0;
+}
+
+.forth .search .result{
+	width: 100%;
+	height: 100%;
+	background: url(../images/result.png);
+
+	transform: translateY(-100%);
+}
+.forth .info{
+	width: 612px;
+	height: 299px;
+	background: url(../images/info_4.png);
+}
+/*动画*/
+
+.forth.current .search{
+	transform: translateX(0);
+	transition: all 1.5s ease-in-out .2s;
+}
+.forth.current .keyward{
+	animation: typing 1.5s steps(5) 1.3s forwards;
+}
+@keyframes typing{
+	from{}
+	to{
+		width: 100px;
+	}
+}
+.forth.current .result{
+	transform: translateY(0);
+	transition: all 1s ease-in-out 2.8s;
+}
+
+
+
+.fifth>div{
+	display: flex;
+	flex-direction: column;
+	/*justify-content: space-between;*/
+	align-items: center;  /*浏览器居中*/
+}
+.fifth .info{
+	width: 1077px;
+	height: 134px;
+	margin: 30px auto;
+	background: url(../images/info_5.png) no-repeat center center;
+}
+.fifth .page{
+	width: 1004px;
+	flex: 1;     /*伸缩盒子,别写死*/
+	/*margin: 30px auto;*/
+	position: relative;
+	background-color: rgba(255,255,255,.1);
+	
+}
+
+.page .borderT,.borderB,.borderR,.borderL,.borderBox{
+	background-color: rgba(255,255,255,.5);
+	position: absolute;
+}
+
+.page .borderT{
+	width: 100%;
+	height: 1px;
+	top: 0;
+	left: 0;
+
+	transform: translateX(100%);
+}
+.page .borderR{
+	width: 1px;
+	height: 100%;
+	right: 0px;
+	top:0px;
+
+	transform: translateY(100%);
+}
+.page .borderB{
+	width: 100%;
+	height: 1px;
+	bottom: 0;
+	left: 0;
+}
+.page .borderL{
+	width: 1px;
+	height: 100%;
+	top: 0px;
+	left: 0;
+
+	transform: translateY(-200%);
+}
+.borderBox{
+	
+	height: 30px;
+	border:1px solid rgba(255,255,255,.5);
+	background-color: rgba(255,255,255,.1);
+	border-radius: 5px;
+	top: 31px;
+	left: 70px;
+	box-sizing: border-box;
+
+	opacity: 0;
+	width: 0;
+}
+.line{
+	width: 100%;
+	height: 1px;
+	background-color: rgba(255,255,255,.5);
+	position: absolute;
+	bottom: 30px;
+
+	opacity: 0;
+}
+.extra{
+	width: 394px;
+	height: 30px;
+	background: url(../images/extra.png) no-repeat center center;
+	position: absolute;
+	bottom: 0px;
+	right: 0;
+
+	opacity: 0;
+}
+.fifth .logo{
+	width: 1004px;
+	height: 79px;
+	background: url(../images/toolbar.png);
+
+	opacity: 0;
+}
+/*动画*/
+.fifth.current .borderL{
+	transform: translateY(0);
+	transition: all 1s ease-in-out;
+}
+.fifth.current .borderT{
+	transform: translateX(0);
+	transition: all 1s ease-in-out .5s;
+}
+.fifth.current .borderR{
+	transform: translateY(0);
+	transition: all 1s ease-in-out .5s;
+}
+
+
+.fifth.current .extra,
+.fifth.current .logo,
+.fifth .line{
+	opacity: 1;
+	transition: all 1s 1.5s ease-in-out;
+}
+.fifth.current .borderBox{
+	width: 920px;
+	opacity: 1;
+	transition: all 1s 1.5s ease-in-out;
+}

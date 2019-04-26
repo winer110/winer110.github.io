@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>京东</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="shortcut icon" href="favicon.ico" />
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/banner.js"></script>
+</head>
+<body>
+<!-- 最顶部 -->
+<div class="top">
+	<div class="w">
+		<div class="tl fl"><a href="#">送至：北京</a></div>
+		<div class="tr">
+			<ul>
+				<li ><a id="log" href="#">你好，请登录 &nbsp;&nbsp;&nbsp;&nbsp; 
+</a>					<span class="col-red">免费注册</span></li>
+				<li><a href="#">我的订单</a></li>
+				<li><a href="#">我的京东</a></li>
+				<li><a href="#">京东会员</a></li>
+				<li><a href="#">企业采购</a></li>
+				<li class="tel-jd">
+					<em class="tel"></em>
+					<a href="#">手机京东</a>
+				</li>
+				<li><a href="#">关注京东</a></li>
+				<li><a href="#">客户服务</a></li>
+				<li><a href="#">网站导航</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="mask" class="mask"></div>
+<div id="closeB" class="abox">
+	<span id="closeBtn">×</span>
+</div>
+
+<div id="t-banner" class="topBanner">
+	<div class="w">
+		<img src="images/topbanner.jpg" alt="">
+		<a id="jclose"></a>
+	</div>
+</div>
+<!-- ============================================== -->
+<script type="text/javascript">
+	var tb=document.getElementById('t-banner');
+	var jclose=document.getElementById('jclose');
+	jclose.onclick=function () {
+		tb.style.display='none';
+	}
+</script>
+<!-- LOGO，搜索购物车 -->
+<div class="w jdlogo clearfix">
+	<div class="logo fl">
+		<a class="jd-a" href="http://www.jd.com" target="_blank"  title="叮咚">京东</a>
+		<div class="dong"><a href="#"><img src="images/dong.gif" alt=""></a></div>
+	</div>
+	<div class="search fl">
+		<input type="text" value=" ">
+		<button>搜索</button>
+	</div>
+	<div class="car fr">
+		<a href="#">
+		  <u>8</u>我的购物车<i>></i>
+		</a>
+	</div>
+</div>
+
+<!-- 纵向导航条 -->
+ <script type="text/javascript">
+        window.onload = function () {
+            var Lis = document.getElementsByTagName("li");
+            for (i = 0; i < Lis.length; i++) {
+                Lis[i].onmouseover = function () {
+                    this.className = "lihover";
+                }
+
+                Lis[i].onmouseout = function () {
+                    this.className = "";
+                }
+            }
+
+        }
+</script>
+<div class="nav">
+  <div class="w">
+	<div class="nav-jd fl">全部商品分类</div>
+	<div class="drop-down">
+		<ul>
+			<li>
+				<h3><a href="#">家用电器</a></h3><span>&gt;</span>
+			</li>
+			<li>				
+				<h3><a href="#">手机、数码、京东通信</a></h3><span>&gt;</span>
+			</li>
+			<li>
+				<h3><a href="#">家用电器</a></h3><span>&gt;</span>
+			</li>
+			<li>
+				<h3><a href="#">手机、数码、京东通信</a></h3><span>&gt;</span>
+			</li>
+			<li>
+				<h3><a href="#">家用电器</a></h3><span>&gt;</span>
+			</li>
+			<li>
+				<h3><a href="#">手机、数码、京东通信</a></h3><span>&gt;</span>
+			</li>
+			<li>
+				<h3><a href="#">家用电器</a></h3><span>&gt;</span>
+			</li>
+			<li>
+				<h3><a href="#">手机、数码、京东通信</a></h3><span>&gt;</span>
+			</li>
+			<li>
+				<h3><a href="#">家用电器</a></h3><span>&gt;</span>
+			</li>
+			<li>
+				<h3><a href="#">手机、数码、京东通信</a></h3><span>&gt;</span>
+			</li>
+			<li>
+				<h3><a href="#">家用电器</a></h3><span>&gt;</span>
+			</li>
+			<li>
+				<h3><a href="#">手机、数码、京东通信</a></h3><span>&gt;</span>
+			</li>
+			<li>
+				<h3><a href="#">家用电器</a></h3><span>&gt;</span>
+			</li>
+			<li>
+				<h3><a href="#">手机、数码</a></h3><span>&gt;</span>
+			</li>
+			<li>
+				<h3><a href="#">手机、数码</a></h3><span>&gt;</span>
+			</li>
+		</ul>
+	</div>
+	<div class="nav-iteam clearfix fl">
+		<ul>
+			<li><a href="#">服装城</li></a>
+            <li><a href="#">美妆馆</a></li>
+            <li><a href="#">超市</a></li>
+            <li><a href="#">全球购</a></li>
+            <li><a href="#">闪购</a></li>
+            <li class="new"><a href="#">团购</a></li>
+            <li><a href="#">拍卖</a></li>
+            <li><a href="#">金融</a></li>
+            <li><a href="#">智能</a></li>
+		</ul>
+	</div>
+	<div class="ad fr"></div>
+  </div>
+</div>
+
+<!-- 大背景图 -->
+<div class="bg">
+	<a href="#"></a>
+</div>
+<!-- 轮播图+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div id="container" class="slider fl">
+  <div class="w">
+  	<div id="list" style="left: -730px;">
+  		<div class="view">
+		<a href="javascript:;"><img id="pic" src="images/slider5.jpg" alt="" /></a>
+		<a href="javascript:;"><img id="pic" src="images/slider1.jpg" alt="" /></a>
+		<a href="javascript:;"><img id="pic" src="images/slider2.jpg" alt="" /></a>
+		<a href="javascript:;"><img id="pic" src="images/slider3.jpg" alt="" /></a>
+		<a href="javascript:;"><img id="pic" src="images/slider4.jpg" alt="" /></a>
+		<a href="javascript:;"><img id="pic" src="images/slider5.jpg" alt="" /></a>
+		<a href="javascript:;"><img id="pic" src="images/slider1.jpg" alt="" /></a>
+  		</div>
+  	</div>
+	<ul id="buttons" class="circle">
+		<li index="1" class="on">1</li>
+		<li index="2" >2</li>
+		<li index="3">3</li>
+		<li index="4">4</li>
+		<li index="5">5</li>
+	</ul>
+	<div id="arr" >
+	  <a id="prev" class="arrow" href="javascript:;"> &lt; </a>
+	  <a id="next" class="arrow" href="javascript:;"> &gt; </a>
+	</div>
+  </div>
+</div>
+<!-- ================================== -->
+<!-- 新闻 -->
+<div class="news">
+	<div class="jd-news">
+		<h2 class="clearfix">京东快报<span><a href="#">更多 > </a></span></h2>
+		<ul>
+			<li><span>[特惠]</span>&nbsp;&nbsp;<a href="#">小熊新品上市 免费抽原汁机</a></li>
+			<li><span>[公告]</span>&nbsp;&nbsp;<a href="#">京东生鲜正式启动全球寻“鲜”</a></li>
+			<li><span>[特惠]</span>&nbsp;&nbsp;<a href="#">旅行庆周年 全场低至1折</a></li>
+			<li><span>[公告]</span>&nbsp;&nbsp;<a href="#">京东稳占家电网购六成份额</a></li>
+			<li><span>[特惠]</span>&nbsp;&nbsp;<a href="#">华东专享：华硕笔记本1899抢</a></li>
+		</ul>
+	</div>
+	<div class="services" id="sev">
+		<h2>生活服务</h2>
+		<div class="icon">
+			<a href=""><img src="images/2.png" alt=""></a>
+		</div>
+	   <!-- <ul class="clearfix">
+	          <li class="lifeservi-icon1">
+	              <a href="#">
+	                  <i></i>
+	                  <span>话费</span>
+	              </a>
+	          </li>
+	          <li class="lifeservi-icon2">
+	              <a href="#">
+	                  <i></i>
+	                  <span>话费</span>
+	              </a>
+	          </li>
+	          <li class="lifeservi-icon1">
+	              <a href="#">
+	                  <i></i>
+	                  <span>话费</span>
+	              </a>
+	          </li>
+	          <li class="lifeservi-icon1">
+	              <a href="#" class="song">
+	                  <i></i>
+	                  <span>话费</span>
+	              </a>
+	          </li>
+	          <li class="lifeservi-icon1">
+	              <a href="#">
+	                  <i></i>
+	                  <span>话费</span>
+	              </a>
+	          </li>
+	          <li class="lifeservi-icon1">
+	              <a href="#">
+	                  <i></i>
+	                  <span>话费</span>
+	              </a>
+	          </li>
+	          <li class="lifeservi-icon1">
+	              <a href="#">
+	                  <i></i>
+	                  <span>话费</span>
+	              </a>
+	          </li>
+	          <li class="lifeservi-icon1">
+	              <a href="#">
+	                  <i></i>
+	                  <span>话费</span>
+	              </a>
+	          </li>
+	          <li class="lifeservi-icon1">
+	              <a href="#">
+	                  <i></i>
+	                  <span>话费</span>
+	              </a>
+	          </li>
+	          <li class="lifeservi-icon1">
+	              <a href="#">
+	                  <i></i>
+	                  <span>话费</span>
+	              </a>
+	          </li>
+	          <li class="lifeservi-icon1">
+	              <a href="#">
+	                  <i></i>
+	                  <span>话费</span>
+	              </a>
+	          </li>
+	          <li class="lifeservi-icon1">
+	              <a href="#">
+	                  <i></i>
+	                  <span>话费</span>
+	              </a>
+	          </li>
+	    </ul> -->
+	</div>
+	<script type="text/javascript">
+		var icons=document.getElementById('sev').getElementsByTagName('i');
+		var lens=icons.length;
+		for (var i = 0; i < lens; i++) {
+			icons[i].style.backgroundPosition='0 '+(-25)*i+'px';
+		}
+
+	</script>
+</div>
+
+<!-- 产品 -->
+
+<div class="m-pro ">
+	<div class="w todays clearfix">
+		<div class="today fl"><img src="images/m0.png" alt=""></div>
+		<ul class="Tview fr">
+			<li class="todayPro"><a href=""><img src="images/m1.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/m2.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/m3.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/m4.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/m5.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/m6.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/m1.jpg" alt=""></a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="w clearfix">
+	<div class="p-top clearfix">
+		<div class="clothes fl">
+			<a href=""><img src="images/p1.jpg" alt=""></a>
+		</div>
+		<ul class="p-list fr clearfix">
+			<li><a href="">
+				<img class="p-img" src="images/p2.jpg" alt=""></a>
+				<p class="p-name"><a href="">摩凡陀 手表 瑞红RED LABEL38mm男款机械</a></p>
+				<span class="p-price">￥8927.00</span>
+			</li>
+			<li><a href="">
+				<img class="p-img" src="images/p2.jpg" alt=""></a>
+				<p class="p-name"><a href="">摩凡陀 手表 瑞红RED LABEL38mm男款机械</a></p>
+				<span class="p-price">￥8927.00</span>
+			</li><li><a href="">
+				<img class="p-img" src="images/p2.jpg" alt=""></a>
+				<p class="p-name"><a href="">摩凡陀 手表 瑞红RED LABEL38mm男款机械</a></p>
+				<span class="p-price">￥8927.00</span>
+			</li><li><a href="">
+				<img class="p-img" src="images/p2.jpg" alt=""></a>
+				<p class="p-name"><a href="">摩凡陀 手表 瑞红RED LABEL38mm男款机械</a></p>
+				<span class="p-price">￥8927.00</span>
+			</li><li><a href="">
+				<img class="p-img" src="images/p2.jpg" alt=""></a>
+				<p class="p-name"><a href="">摩凡陀 手表 瑞红RED LABEL38mm男款机械</a></p>
+				<span class="p-price">￥8927.00</span>
+			</li><li><a href="">
+				<img class="p-img" src="images/p2.jpg" alt=""></a>
+				<p class="p-name"><a href="">摩凡陀 手表 瑞红RED LABEL38mm男款机械</a></p>
+				<span class="p-price">￥8927.00</span>
+			</li><li><a href="">
+				<img class="p-img" src="images/p2.jpg" alt=""></a>
+				<p class="p-name"><a href="">摩凡陀 手表 瑞红RED LABEL38mm男款机械</a></p>
+				<span class="p-price">￥8927.00</span>
+			</li><li><a href="">
+				<img class="p-img" src="images/p2.jpg" alt=""></a>
+				<p class="p-name"><a href="">摩凡陀 手表 瑞红RED LABEL38mm男款机械</a></p>
+				<span class="p-price">￥8927.00</span>
+			</li>
+		</ul>
+	</div>
+	<div class="p-extra">
+		<ul>
+			<li><a href=""><img src="images/p3.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/p3.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/p3.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/p0.jpg" alt=""></a></li>
+		</ul>
+	</div>
+	<div class="brands clearfix">
+	<img src="images/brands.png" alt="">
+		<!-- <ul>
+			<li><a href=""><img src="images/p4.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/p4.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/p4.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/p4.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/p4.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/p4.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/p4.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/p4.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/p4.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/p4.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/p4.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/p4.jpg" alt=""></a></li>
+		</ul> -->
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 内容撑开区域 -->
+<div class="content"></div>
+<!-- 页面底部 -->
+<div class="footer">
+	<div class="links">
+	  <div class="w">
+		<a class="slogen1" href="#"><img src="images/slogen.png" alt=""></a>
+		<a class="slogen2" href="#"><img src="images/slogen2.png" alt=""></a>
+		<a class="slogen3" href="#"><img src="images/slogen3.png" alt=""></a>
+		<a class="slogen4" href="#"><img src="images/slogen4.png" alt=""></a>
+	  </div>
+	</div>
+	<div class="slogen clearfix">
+	    <div class="w">
+			<dl>
+				<dt><a href="#">购物指南</a></dt>
+					<dd><a href="#">购物流程</a></dd>
+					<dd><a href="#">会员介绍</a></dd>
+					<dd><a href="#">生活旅行/团购</a></dd>
+					<dd><a href="#">常见问题</a></dd>
+					<dd><a href="#">大家电</a></dd>
+					<dd><a href="#">联系客服</a></dd>
+			</dl>
+			<dl>
+				<dt><a href="#">配送方式</a></dt>
+					<dd><a href="#">上门自提</a></dd>
+					<dd><a href="#">211限时达</a></dd>
+					<dd><a href="#">配送服务查询</a></dd>
+					<dd><a href="#">配送费收取标准</a></dd>
+					<dd><a href="#">海外配送</a></dd>
+					<dd><a href="#">支付方式</a></dd>
+			</dl>		
+			<dl>
+				<dt><a href="#">货到付款</a></dt>
+					<dd><a href="#">在线支付</a></dd>
+					<dd><a href="#">分期付款</a></dd>
+					<dd><a href="#">邮局汇款</a></dd>
+					<dd><a href="#">公司转账</a></dd>
+					<dd><a href="#">售后服务</a></dd>
+					<dd><a href="#">售后政策</a></dd>
+			</dl>		
+			<dl>
+				<dt><a href="#">特色服务</a></dt>
+					<dd><a href="#">价格保护</a></dd>
+					<dd><a href="#">退款说明</a></dd>
+					<dd><a href="#">返修/退换货</a></dd>
+					<dd><a href="#">取消订单</a></dd>
+					<dd><a href="#">夺宝岛</a></dd>
+					<dd><a href="#">延保服务</a></dd>
+		    </dl>
+			<dl class="coverage">
+				<dt><a href="#">京东自营覆盖区县</a></dt>
+					<p>京东已向全国2654个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。</p>
+					<p class="xq">查看详情 ></p>
+			</dl>
+		</div>
+	</div>
+	<div class="copy">
+		<p>
+		 <a href="#">关于我们</a>| 
+		 <a href="#">联系我们</a>| 
+		 <a href="#">联系客服</a>| 
+		 <a href="#">商家入驻</a>| 
+		 <a href="#">营销中心</a>| 
+		 <a href="#">手机京东</a>| 
+		 <a href="#">友情链接</a>| 
+		 <a href="#">销售联盟</a>| 
+		 <a href="#">京东社区</a>| 
+		 <a href="#">京东公益</a>| 
+		 <a href="#">English Site</a>|
+		 <a href="#">Contact Us</a>
+		 </p>
+
+		<p>京公网安备 11000002000088号  |  京ICP证070359号  |  互联网药品信息服务资格证编号(京)-经营性-2014-0008  |  新出发京零 字第大120007号<br>
+互联网出版许可证编号新出网证(京)字150号  |  出版物经营许可证  |  网络文化经营许可证京网文[2014]2148-348号  |  违法和不良信息举报电话：4006561155 <br>
+Copyright © 2004 - 2016  京东JD.com 版权所有  |  消费者维权热线：4006067733 <br>
+京东旗下网站：京东钱包</p>
+ 		<p class="mess">
+ 			<a href="#"><img src="images/mess.png" alt=""></a>
+ 			<a href="#"><img src="images/mess2.png" alt=""></a>
+ 			<a href="#"><img src="images/mess3.png" alt=""></a>
+ 			<a href="#"><img src="images/mess4.png" alt=""></a>
+ 			<a href="#"><img src="images/mess5.png" alt=""></a>
+ 		</p>
+	</div>
+</div>
+</body>
+</html>

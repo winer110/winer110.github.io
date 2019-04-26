@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>wuziq</title>
+	<style type="text/css">
+		.wrap{
+			width: 560px;
+			height: 560px;
+			margin: 0 auto;
+			border: 1px solid #000;
+			background-image: url(img/bak.jpg);
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<canvas id="canvas"></canvas>
+	</div>
+	<script type="text/javascript">
+		var canvas = document.getElementById('canvas');
+		canvas.width=560;
+		canvas.height=560;
+		//绘制棋盘 14*14
+		var maps=new Array(14);
+		for (var i = 0; i < 14; i++) {
+			maps[i]=new Array(14);
+			for (var j = 0; j < 14; j++) {
+				maps[i][j]=0;
+			}
+		}
+
+		//画线条
+		var ctx=canvas.getContext("2d");
+		ctx.strokeStyle='#eee';
+		for(var i=0;i<14;i++){
+			for (var j = 0; j < 14; j++) {
+				ctx.strokeRect(j*40, i*40, 40, 40)
+			}
+		}
+
+		//定义黑白棋子
+		var black = new Image()
+		var white = new Image()
+		var isBlack=true
+		black.src='img/black.png'
+		white.src='img/white.png'
+
+
+		canvas.onclick=function(e){
+			// console.log(e.clientX)
+			// console.log((screen.width-canvas.width)/2)
+			// var leftOffset
+			// window.onresize=function(leftOffset){
+			// 	return leftOffset=(screen.width-canvas.width)/2
+			// }
+			var leftOffset=(screen.width-canvas.width)/2
+			console.log('leftOffset '+leftOffset)	//改变窗口宽度后，leftOffset 发生变化，导致棋盘内坐标点 X 出错
+			//得到鼠标在棋盘内点击的坐标
+			var x=e.clientX-leftOffset+8      //body 默认margin 8px
+			var y=e.clientY-8
+			console.log('x ' + x,'y ' + y)
+
+			//计算落子坐标		区别 % /
+			var row,col;   //行列
+			if (x%40 >= 20) {
+				row = parseInt(x/40)+1
+			} else {
+				row = parseInt(x/40)
+			}
+			if (y%40>=20) {
+				col=parseInt(y/40)+1
+			} else {
+				col=parseInt(y/40);
+			}
+			// var row=parseInt((e.clientX-20)/40)+1
+			// var col=parseInt((e.clientY-20)/40)+1
+			console.log('row '+row,'col '+col)
+			if(isBlack){
+				ctx.drawImage(black,row*40-20,col*40-20)
+				isBlack = false
+				maps[row][col]=2 //黑旗是2
+				iswin(2,row,col)
+			}else{
+				ctx.drawImage(white,row*40-20,col*40-20)
+				isBlack = true
+				maps[row][col]=1 //白旗是1
+				iswin(1,row,col)
+			}
+
+
+			function iswin(type,row,col){
+				var orgRow=row;
+				var orgCol=col;
+				var total=1;
+
+				//水平方向获胜算法(行不变，列++/--)
+				while(col-1>0 && maps[row][col-1] == type){
+					total++;
+					col--;
+				}
+				
+
+
+				row=orgRow
+				col=orgCol
+				while(col+1<14 && maps[row][col+1] == type){
+					col++;
+					total++;
+				}
+				if(total>=5){
+					if(type==1){
+						alert("白子赢");
+					}else{
+						alert("黑子赢");
+					}
+					
+				}
+				// win(2)
+				// //取胜规则
+				// function win(type){
+				// 	if (total>=5) {
+				// 		if (type == type) {
+				// 			alert('黑旗获胜')
+				// 		} else {
+				// 			alert('白旗获胜')
+				// 		}
+				// 	}
+				// }
+				 
+				
+
+
+				//垂直方向(col不变，row++/--)
+				row=orgRow
+				col=orgCol
+				total=1;
+				while(row-1>0 && maps[row-1][col] == type){
+					row--
+					total++
+				}
+				
+
+
+				row=orgRow
+				col=orgCol
+				while(row+1<14 && maps[row+1][col] == type){
+					row++
+					total++
+				}
+				if(total>=5)
+				{
+					if(type==1){
+						alert("白子赢");
+					}else{
+						alert("黑子赢");
+					}
+					
+				}
+				
+				
+
+
+				// 左下(行-- 列++)----
+				row=orgRow
+				col=orgCol
+				total=1;
+				while(row-1>0 && col+1<14 && maps[row-1][col+1] ==type){
+					row--
+					col++
+					total++
+				}
+				
+
+				//右上（行++ 列--）
+				row=orgRow
+				col=orgCol
+				while(row+1<14 && col-1 >0 && maps[row+1][col-1] ==type){
+					row++
+					col--
+					total++
+				}
+				if(total>=5)
+				{
+					if(type==1)
+					alert("白子赢");
+					else
+					alert("黑子赢");
+				}
+				
+
+
+				//左上(row--,col--)
+				row=orgRow;
+				col=orgCol;
+				total=1;
+				while(row-1>0&&col-1>0&&maps[row-1][col-1]==type)
+				{
+					row--;
+					col--;
+					total++;
+				}
+				
+
+				//右下(row++,col++)
+				row=orgRow;
+				col=orgCol;
+				while(row+1<14&&col+1<14&&maps[row+1][col+1]==type){
+					row++;
+					col++;
+					total++;
+				}
+				if(total>=5){
+					if(type==1)
+					alert("白子赢");
+					else
+					alert("黑子赢");
+				}
+
+			}
+
+
+
+			
+		}
+
+	
+	</script>
+</body>
+</html>
